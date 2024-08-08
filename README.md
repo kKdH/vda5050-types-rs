@@ -8,35 +8,40 @@ standard. VDA5050 is an open standard for communication between AGV fleets and a
 
 ## Usage
 
-Add a dependency on this crate to your project's Cargo.toml:
-```toml
-[dependencies]
-vda5050-types = { version = "0.1.0", features = ["v2_0"] }
-```
+1. Add a dependency on this crate to your project's Cargo.toml:
+    ```toml
+    [dependencies]
+    vda5050-types = { version = "0.1.0", features = ["v2_0"] }
+    
+    [patch.crates-io]
+    vda5050-types = { git = "https://github.com/kkdh/vda5050-types-rs", rev = "58e796d" }
+    ```
+    **Note:** There is currently no release published to [crates.io](https://crates.io/), therefore, you need to override the dependency and specify the repository location.
 
-```rust
-use vda5050_types::v2_0::common::{Action, BlockingType};
-use vda5050_types::v2_0::instant_actions::InstantActions;
-
-fn main() {
-    let action = InstantActions {
-        header_id: 0,
-        timestamp: Utc::now(),
-        version: String::from("2"),
-        manufacturer: String::from("Fubar Co."),
-        serial_number: String::from("1234"),
-        instant_actions: vec![
-            Action {
-                action_type: String::from("pick"),
-                action_id: String::from("pick-1"),
-                action_description: None,
-                blocking_type: BlockingType::Soft,
-                action_parameters: vec![],
-            }
-        ],
-    };
-}
-```
+2. Use the types provided by the crate:
+    ```rust
+    use vda5050_types::v2_0::common::{Action, BlockingType};
+    use vda5050_types::v2_0::instant_actions::InstantActions;
+    
+    fn main() {
+        let action = InstantActions {
+            header_id: 0,
+            timestamp: Utc::now(),
+            version: String::from("2"),
+            manufacturer: String::from("Fubar Co."),
+            serial_number: String::from("1234"),
+            instant_actions: vec![
+                Action {
+                    action_type: String::from("pick"),
+                    action_id: String::from("pick-1"),
+                    action_description: None,
+                    blocking_type: BlockingType::Soft,
+                    action_parameters: vec![],
+                }
+            ],
+        };
+    }
+    ```
 
 ## [Documentation](https://docs.rs/vda5050-types)
 
