@@ -1,7 +1,6 @@
 use alloc::string::String;
 use alloc::vec::Vec;
 use chrono::{DateTime, Utc};
-use serde::{Deserialize, Serialize};
 
 pub type HeaderId = u64;
 pub type Timestamp = DateTime<Utc>;
@@ -9,7 +8,7 @@ pub type Timestamp = DateTime<Utc>;
 /// Current position of the AGV on the map. Optional: Can only be omitted for AGVs without the capability to localize themselves, e.g. line guided AGVs.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct AgvPosition {
@@ -34,7 +33,7 @@ pub struct AgvPosition {
 /// This point describes the loads position on the AGV in the vehicle coordinates. The bounding_box_reference point is in the middle of the footprint of the load, so length/2 and width/2.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct BoundingBoxReference {
@@ -50,7 +49,7 @@ pub struct BoundingBoxReference {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ControlPoint {
@@ -67,7 +66,7 @@ pub struct ControlPoint {
 /// Dimensions of the load's bounding box in meters.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct LoadDimensions {
@@ -82,7 +81,7 @@ pub struct LoadDimensions {
 /// Node position. The object is defined in chapter 6.6. Optional: master control has this information. Can be sent additionally, e.g. for debugging purposes.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct NodePosition {
@@ -109,7 +108,7 @@ pub struct NodePosition {
 /// The trajectory is to be communicated as a NURBS and is defined in chapter 6.4. Trajectory segments are from the point where the AGV starts to enter the edge until the point where it reports that the next node was traversed.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Trajectory {
@@ -124,7 +123,7 @@ pub struct Trajectory {
 /// The AGVs velocity in vehicle coordinates.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Velocity {

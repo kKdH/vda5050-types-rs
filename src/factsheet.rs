@@ -1,12 +1,11 @@
 use alloc::string::String;
 use alloc::vec::Vec;
-use serde::{Deserialize, Serialize};
 use crate::common::{BoundingBoxReference, HeaderId, LoadDimensions, Timestamp};
 
 /// The factsheet provides basic information about a specific AGV type series. This information allows comparison of different AGV types and can be applied for the planning, dimensioning and simulation of an AGV system. The factsheet also includes information about AGV communication interfaces which are required for the integration of an AGV type series into a VD[M]A-5050-compliant master control.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Factsheet {
@@ -39,7 +38,7 @@ pub struct Factsheet {
 /// These parameters generally specify the class and the capabilities of the AGV.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct TypeSpecification {
@@ -62,7 +61,7 @@ pub struct TypeSpecification {
 /// Simplified description of AGV kinematics-type.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum AgvKinematic {
@@ -75,7 +74,7 @@ pub enum AgvKinematic {
 /// Simplified description of AGV class.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum AgvClass {
@@ -87,7 +86,7 @@ pub enum AgvClass {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum LocalizationType {
@@ -101,7 +100,7 @@ pub enum LocalizationType {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum NavigationType {
@@ -113,7 +112,7 @@ pub enum NavigationType {
 /// These parameters specify the basic physical properties of the AGV.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct PhysicalParameters {
@@ -138,7 +137,7 @@ pub struct PhysicalParameters {
 /// This JSON-object describes the protocol limitations of the AGV. If a parameter is not defined or set to zero then there is no explicit limit for this parameter.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ProtocolLimits {
@@ -153,7 +152,7 @@ pub struct ProtocolLimits {
 /// Maximum lengths of strings
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct MaxStringLens {
@@ -176,7 +175,7 @@ pub struct MaxStringLens {
 /// Maximum lengths of arrays.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct MaxArrayLens {
@@ -233,7 +232,7 @@ pub struct MaxArrayLens {
 /// Timing information.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Timing {
@@ -250,7 +249,7 @@ pub struct Timing {
 /// Supported features of VDA5050 protocol
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ProtocolFeatures {
@@ -262,7 +261,7 @@ pub struct ProtocolFeatures {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct OptionalParameter {
@@ -277,7 +276,7 @@ pub struct OptionalParameter {
 /// Type of support for the optional parameter.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum Support {
@@ -289,7 +288,7 @@ pub enum Support {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct AgvAction {
@@ -307,7 +306,7 @@ pub struct AgvAction {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum ActionScope {
@@ -318,7 +317,7 @@ pub enum ActionScope {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ActionParameter {
@@ -335,7 +334,7 @@ pub struct ActionParameter {
 /// Data type of Value.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum ValueDataType {
@@ -351,7 +350,7 @@ pub enum ValueDataType {
 /// Detailed definition of AGV geometry.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct AgvGeometry {
@@ -364,7 +363,7 @@ pub struct AgvGeometry {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct WheelDefinition {
@@ -389,7 +388,7 @@ pub struct WheelDefinition {
 /// Type of an AGV's wheel.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum WheelType {
@@ -401,7 +400,7 @@ pub enum WheelType {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Position {
@@ -415,7 +414,7 @@ pub struct Position {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Envelopes2d {
@@ -429,7 +428,7 @@ pub struct Envelopes2d {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct PolygonPoint {
@@ -441,7 +440,7 @@ pub struct PolygonPoint {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Envelopes3d {
@@ -460,7 +459,7 @@ pub struct Envelopes3d {
 /// 3D-envelope curve data, format specified in ‚format‘
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Data;
@@ -468,7 +467,7 @@ pub struct Data;
 /// Abstract specification of load capabilities.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct LoadSpecification {
@@ -480,7 +479,7 @@ pub struct LoadSpecification {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct LoadSet {

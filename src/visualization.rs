@@ -1,11 +1,10 @@
 use alloc::string::String;
-use serde::{Deserialize, Serialize};
 use crate::common::{AgvPosition, HeaderId, Timestamp, Velocity};
 
 /// AGV position and/or velocity for visualization purposes. Can be published at a higher rate if wanted. Since bandwidth may be expensive depening on the update rate for this topic, all fields are optional.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Visualization {

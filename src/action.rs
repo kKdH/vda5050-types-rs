@@ -1,11 +1,10 @@
 use alloc::string::String;
 use alloc::vec::Vec;
-use serde::{Deserialize, Serialize};
 
 /// Node Action Object
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Action {
@@ -24,7 +23,7 @@ pub struct Action {
 /// Regulates if the action is allowed to be executed during movement and/or parallel to other actions.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum BlockingType {
@@ -39,7 +38,7 @@ pub enum BlockingType {
 /// ActionParameter Object
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ActionParameter {

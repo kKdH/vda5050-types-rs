@@ -1,13 +1,12 @@
 use alloc::string::String;
 use alloc::vec::Vec;
-use serde::{Deserialize, Serialize};
 use crate::action::Action;
 use crate::common::{HeaderId, Timestamp};
 
 /// Instant actions that the AGV is to execute as soon as they arrive.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct InstantActions {

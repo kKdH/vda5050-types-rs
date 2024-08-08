@@ -1,11 +1,10 @@
 use alloc::string::String;
-use serde::{Deserialize, Serialize};
 use crate::common::{HeaderId, Timestamp};
 
 /// AGV connection state reported as a last will message. Has to be sent with retain flag. Once the AGV comes online, it has to send this message on its connect topic, with the connection_state enum set to "ONLINE". The last will message is to be configured with the connection state set to "CONNECTIONBROKEN". Thus, if the AGV disconnects from the broker, master control gets notified via the topic "connection". If the AGV is disconnecting in an orderly fashion (e.g. shutting down, sleeping), the AGV is to publish a message on this topic with the connection_state set to "OFFLINE".
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Connection {
@@ -26,7 +25,7 @@ pub struct Connection {
 /// Connection state.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum ConnectionState {

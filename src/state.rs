@@ -1,13 +1,12 @@
 use alloc::string::String;
 use alloc::vec::Vec;
-use serde::{Deserialize, Serialize};
 
 use crate::common::{AgvPosition, BoundingBoxReference, HeaderId, LoadDimensions, NodePosition, Timestamp, Trajectory, Velocity};
 
 /// All encompassing state of the AGV.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct State {
@@ -65,7 +64,7 @@ pub struct State {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct NodeState {
@@ -83,7 +82,7 @@ pub struct NodeState {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct EdgeState {
@@ -101,7 +100,7 @@ pub struct EdgeState {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ActionState {
@@ -120,7 +119,7 @@ pub struct ActionState {
 /// Status of an Action.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum ActionStatus {
@@ -141,7 +140,7 @@ pub enum ActionStatus {
 /// Load object that describes the load if the AGV has information about it.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Load {
@@ -162,7 +161,7 @@ pub struct Load {
 /// Contains all battery-related information.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct BatteryState {
@@ -181,7 +180,7 @@ pub struct BatteryState {
 /// Current operating mode of the AGV. For additional information, see the table OperatingModes in chapter 6.10.6.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum OperatingMode {
@@ -195,7 +194,7 @@ pub enum OperatingMode {
 /// An error object.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Error {
@@ -212,7 +211,7 @@ pub struct Error {
 /// Object that holds the error reference (e.g. order_id, order_update_id, action_id...) as key-value pairs.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct ErrorReference {
@@ -225,7 +224,7 @@ pub struct ErrorReference {
 /// Error level.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum ErrorLevel {
@@ -238,7 +237,7 @@ pub enum ErrorLevel {
 /// An information object.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Information {
@@ -255,7 +254,7 @@ pub struct Information {
 /// Object that holds the info reference (e.g. order_id, order_update_id, action_id...) as key-value pairs.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct InfoReference {
@@ -268,7 +267,7 @@ pub struct InfoReference {
 /// Info level.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum InfoLevel {
@@ -281,7 +280,7 @@ pub enum InfoLevel {
 /// Object that holds information about the safety status.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct SafetyState {
@@ -294,7 +293,7 @@ pub struct SafetyState {
 /// Acknowledge type of e_stop.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum EStop {

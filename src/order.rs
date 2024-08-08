@@ -1,6 +1,5 @@
 use alloc::string::String;
 use alloc::vec::Vec;
-use serde::{Deserialize, Serialize};
 
 use crate::action::Action;
 use crate::common::{HeaderId, NodePosition, Timestamp, Trajectory};
@@ -8,7 +7,7 @@ use crate::common::{HeaderId, NodePosition, Timestamp, Trajectory};
 /// An order to be communicated from master control to the AGV.
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Order {
@@ -36,7 +35,7 @@ pub struct Order {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Node {
@@ -56,7 +55,7 @@ pub struct Node {
 
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "camelCase")
 )]
 pub struct Edge {
@@ -99,7 +98,7 @@ pub struct Edge {
 #[derive(Default)]
 #[cfg_attr(feature = "fmt", derive(Debug))]
 #[cfg_attr(feature = "serde",
-    derive(Serialize, Deserialize),
+    derive(serde::Serialize, serde::Deserialize),
     serde(rename_all = "SCREAMING_SNAKE_CASE")
 )]
 pub enum OrientationType {
