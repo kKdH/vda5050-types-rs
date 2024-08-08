@@ -1,3 +1,7 @@
+[![github](https://img.shields.io/github/actions/workflow/status/kkdh/vda5050-types-rs/build.yaml?branch=main&style=for-the-badge&logo=githubactions&label=build)](https://github.com/kkdh/vda5050-types-rs/actions?query=branch%3Amain)
+[![docs.rs](https://img.shields.io/docsrs/vda5050-types?style=for-the-badge&logo=rust)](https://docs.rs/vda5050-types)
+[![crates.io](https://img.shields.io/crates/v/vda5050-types?style=for-the-badge&logo=rust)](https://crates.io/crates/vda5050-types)
+
 # VDA5050 Types
 This crate provides data-types for the rust programming language defined by the [VDA5050](https://github.com/VDA5050/VDA5050)
 standard. VDA5050 is an open standard for communication between AGV fleets and a central master control.
