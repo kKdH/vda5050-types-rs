@@ -19,7 +19,7 @@ pub struct AgvPosition {
     /// Range: \[-pi..pi\] Orientation of the AGV.
     pub theta: f32,
     /// Unique identification of the map in which the position is referenced. Each map has the same origin of coordinates. When an AGV uses an elevator, e.g. leading from a departure floor to a target floor, it will disappear off the map of the departure floor and spawn in the related lift node on the map of the target floor.
-    map_id: String,
+    pub map_id: String,
     /// Additional information on the map.
     pub map_description: Option<String>,
     /// True if the AGVs position is initialized, false, if position is not initialized.
