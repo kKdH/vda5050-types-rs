@@ -108,4 +108,8 @@ pub mod v2_0 {
         pub use crate::state::SafetyState as SafetyState;
         pub use crate::state::State as State;
     }
+
+    pub mod visualization {
+        pub use crate::visualization::Visualization;
+    }
 }
