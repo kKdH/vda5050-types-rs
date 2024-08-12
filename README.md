@@ -12,11 +12,7 @@ standard. VDA5050 is an open standard for communication between AGV fleets and a
     ```toml
     [dependencies]
     vda5050-types = { version = "0.1.0", features = ["v2_0"] }
-    
-    [patch.crates-io]
-    vda5050-types = { git = "https://github.com/kkdh/vda5050-types-rs", rev = "58e796d" }
     ```
-    **Note:** There is currently no release published to [crates.io](https://crates.io/), therefore, you need to override the dependency and specify the repository location.
 
 2. Use the types provided by the crate:
     ```rust
