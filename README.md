@@ -11,7 +11,7 @@ standard. VDA5050 is an open standard for communication between AGV fleets and a
 1. Add a dependency on this crate to your project's Cargo.toml:
     ```toml
     [dependencies]
-    vda5050-types = { version = "0.1.0", features = ["v2_0"] }
+    vda5050-types = { version = "0.2.0", features = ["v2_0"] }
     ```
 
 2. Use the types provided by the crate:

@@ -1,6 +1,6 @@
 [package]
 name = "vda5050-types"
-version = "0.2.0"
+version = "0.3.0"
 description = "Types defined by the VDA5050 standard for AGV communication."
 authors = ["Elmar Schug <elmar.schug@jayware.org>"]
 readme = "README.md"
