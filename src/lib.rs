@@ -15,6 +15,8 @@
 //! <sup>&#x2714; enabled, &#x2717; disabled</sup>
 //!
 #![cfg_attr(not(test), no_std)]
+#![cfg_attr(docsrs, feature(doc_cfg))]
+
 extern crate alloc;
 
 mod action;
@@ -26,7 +28,8 @@ mod order;
 mod state;
 mod visualization;
 
-#[cfg(feature = "v2_0")]
+#[cfg(any(feature = "v2_0", doc))]
+#[cfg_attr(docsrs, doc(cfg(feature = "v2_0")))]
 pub mod v2_0 {
 
     pub mod common {
