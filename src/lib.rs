@@ -11,6 +11,7 @@
 //! | fmt       | &#x2714; | When enabled, certain types will provide an implementation for [`core::fmt::Debug`] and [`core::fmt::Display`] traits. |
 //! | serde     | &#x2717; | When enabled, certain types will provide an implementation for [`serde::Serialize`] and [`serde::Deserialize`] traits. |
 //! | v2_0      | &#x2717; | When enabled, VDA5050 version 2 types are available.                                                                   |
+//!
 //! <sup>&#x2714; enabled, &#x2717; disabled</sup>
 //!
 #![cfg_attr(not(test), no_std)]
