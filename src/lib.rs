@@ -17,6 +17,9 @@
 #![cfg_attr(not(test), no_std)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
+#[cfg(test)]
+extern crate std;
+
 extern crate alloc;
 
 mod action;
